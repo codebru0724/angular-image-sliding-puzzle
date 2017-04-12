@@ -1,0 +1,25 @@
+{
+  "name": "angular-image-sliding-puzzle",
+  "version": "1.0.0",
+  "description": "Self Learning AngularJS Project",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codebru0724/angular-image-sliding-puzzle.git"
+  },
+  "keywords": [
+    "angular",
+    "sliding",
+    "puzzle",
+    "angular-route"
+  ],
+  "author": "Codebru0724",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/codebru0724/angular-image-sliding-puzzle/issues"
+  },
+  "homepage": "https://github.com/codebru0724/angular-image-sliding-puzzle#readme"
+}
