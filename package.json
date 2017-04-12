@@ -21,5 +21,9 @@
   "bugs": {
     "url": "https://github.com/codebru0724/angular-image-sliding-puzzle/issues"
   },
-  "homepage": "https://github.com/codebru0724/angular-image-sliding-puzzle#readme"
+  "homepage": "https://github.com/codebru0724/angular-image-sliding-puzzle#readme",
+  "devDependencies": {
+    "angular": "^1.6.4",
+    "angular-route": "^1.6.4"
+  }
 }
