@@ -4,14 +4,19 @@
 	<head lang="en">
 	  <meta charset="utf-8">
 	  <title>AngularJS Routing</title>
+		
 	</head>
 
 	<body ng-app="mainApp">
-		
+		<h1>Enjoy My Image Slidding Puzzle Game</h1>
 
-	  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+		<ng-view></ng-view>
+		
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
 	  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.min.js"></script>		
-	  <script type="text/javascript" src="app.js"></script>
+	  
+		<script type="text/javascript" src="./app.js"></script>
+		<script type="text/javascript" src="./controllers/gameViewController.js"></script>
 		
 	</body>
 </html>
