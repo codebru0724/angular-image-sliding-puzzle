@@ -1,0 +1,11 @@
+<div>
+  <h2 id="moves">Moves: </h2>
+  <table>
+    <tr ng-repeat="($row, row) in puzzle.grid">
+      <td ng-repeat="($col, tile) in row"         
+        ng-style="tile.style" 
+        ng-class="{'puzzle-empty': tile.empty}" title="{{tile.id}}">
+      </td>
+    </tr>
+  </table>
+</div>
