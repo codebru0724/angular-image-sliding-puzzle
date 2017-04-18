@@ -1,7 +1,6 @@
 	'use strict';
 
   mainApp.controller('gameViewController', function ($scope) {
-
     return true;
   });
 
