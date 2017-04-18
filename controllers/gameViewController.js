@@ -75,14 +75,15 @@
       replace: true,
       templateUrl: './templates/boardView.html',
       scope: {
-          src: '@'
+          src: '@',
+          size: '@'
       },
 
       link: function(scope, element, attrs) {
 
         var image = new Image();
         var rows = 3, cols = 3;
-        
+
         function create() {
           scope.puzzle = new slidingPuzzle(rows, cols);          
         }
@@ -103,6 +104,15 @@
           scope.puzzle.shuffle();
         }        
 
+        attrs.$observe('size', function(size) {
+            size = size.split('x');
+            if (size[0] >= 2 && size[1] >= 2) {
+                rows = size[0];
+                cols = size[1];
+                create();
+            }
+        });
+
         attrs.$observe('src', function(src) {        
           image.src = src;
           image.onload = function() {            
@@ -111,8 +121,6 @@
             });
           };
         });
-
-        create();
 
       }
     }
