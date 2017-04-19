@@ -61,6 +61,22 @@
         }
 
       });
+
+      this.move = function(srow, scol) {
+        var dirs = [[1, 0], [-1, 0], [0, 1], [0, -1]],
+            tref, trow, tcol;
+
+        for (var d = 0; d < dirs.length; d++) {
+          trow = srow + dirs[d][0];
+          tcol = scol + dirs[d][1];
+          if (this.grid[trow] && this.grid[trow][tcol] && this.grid[trow][tcol].empty) {
+              tref = this.grid[srow][scol];
+              this.grid[srow][scol] = this.grid[trow][tcol];
+              this.grid[trow][tcol] = tref;
+              this.moves++;
+          }
+        }
+      };
     }
 
     return function(rows, cols) {

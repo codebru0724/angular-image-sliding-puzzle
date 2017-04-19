@@ -1,0 +1,12 @@
+.sliding-puzzle-table {
+
+}
+
+.sliding-puzzle-table tr td {
+  border: 2px outset #fff;
+}
+
+.sliding-puzzle-table .puzzle-empty {
+  background: #e3e3e3 !important;
+  border: 2px inset #fff;
+}
