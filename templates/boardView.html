@@ -1,5 +1,5 @@
 <div>
-  <h2 id="moves">Moves: </h2>
+  <h2 id="moves">Moves: {{puzzle.moves}}</h2>
   <table class="sliding-puzzle-table">
     <tr ng-repeat="($row, row) in puzzle.grid">
       <td ng-repeat="($col, tile) in row"         
