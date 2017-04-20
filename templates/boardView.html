@@ -1,6 +1,8 @@
 <div>
   <h2 id="moves">Moves: {{puzzle.moves}}</h2>
-  <button class="btn-restart btn btn-primary" ng-click="onClickRestart()">Restart</button>
+  <div class="control-div">
+    <button class="btn-restart btn btn-primary" ng-click="onClickRestart()">Restart</button>
+  </div>
   <table class="sliding-puzzle-table" ng-class="{'puzzle-solved': puzzle.isSolved()}">
     <tr ng-repeat="($row, row) in puzzle.grid">
       <td ng-repeat="($col, tile) in row"         
