@@ -65,6 +65,11 @@
       });
 
       this.move = function(srow, scol) {
+
+        if( this .isSolved() ) {
+          return;
+        }
+
         var dirs = [[1, 0], [-1, 0], [0, 1], [0, -1]],
             tref, trow, tcol;
 
@@ -127,12 +132,11 @@
         var image = new Image();
         var rows = 3, cols = 3;
 
-        function create() {
-          scope.puzzle = new slidingPuzzle(rows, cols);          
-        }
+        scope.create = function() {
+          scope.puzzle = new slidingPuzzle(rows, cols);                    
+        };
 
-        function tile() {          
-
+        scope.tile = function() {                    
           var width = image.width / cols,
               height = image.height / rows;
 
@@ -145,14 +149,14 @@
           });
 
           scope.puzzle.shuffle();
-        }        
+        };        
 
         attrs.$observe('size', function(size) {
             size = size.split('x');
             if (size[0] >= 2 && size[1] >= 2) {
                 rows = size[0];
                 cols = size[1];
-                create();
+                scope.create();
             }
         });
 
@@ -160,11 +164,15 @@
           image.src = src;
           image.onload = function() {            
             scope.$apply(function() {
-              tile();
+              scope.tile();
             });
           };
         });
 
+        scope.onClickRestart = function() {          
+          scope.create();
+          scope.tile();          
+        };
       }
     }
   });
