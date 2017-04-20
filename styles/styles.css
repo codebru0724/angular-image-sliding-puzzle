@@ -4,9 +4,16 @@
 
 .sliding-puzzle-table tr td {
   border: 2px outset #fff;
+  border-collapse: collapse;
+  cursor: pointer;
 }
 
 .sliding-puzzle-table .puzzle-empty {
   background: #e3e3e3 !important;
   border: 2px inset #fff;
 }
+
+.sliding-puzzle-table.puzzle-solved td {
+  border: none;
+}
+

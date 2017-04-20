@@ -8,7 +8,9 @@
     
     function shuffle(a) {
       var q;
-      for (var j, x, i = a.length; i; j = parseInt(Math.random() * i, 10), x = a[--i], a[i] = a[j], a[j] = x) { q = 0; }
+      for (var j, x, i = a.length; i; j = parseInt(Math.random() * i, 10), x = a[--i], a[i] = a[j], a[j] = x) { 
+        q = 0; 
+      }
       return a;
     }
 
@@ -77,6 +79,32 @@
           }
         }
       };
+
+      this.solve = function() {
+        var tiles = [];
+        this.traverse(function(tile) {
+          tiles.push(tile);
+        });
+        tiles.sort(function(x, y) {
+          return (x.id - y.id);
+        });
+        this.traverse(function(tile, row, col) {
+          this.grid[row][col] = tiles.shift();
+        });
+      };
+
+      this.isSolved = function() {
+        var id = 1;
+        for (var row = 0; row < rows; row++) {
+          for (var col = 0; col < cols; col++) {
+            if (this.grid[row][col].id !== id++) {
+              return false;
+            }
+          }
+        }
+        return true;
+      };
+
     }
 
     return function(rows, cols) {
