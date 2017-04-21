@@ -7,6 +7,15 @@
     <button class="btn-solve btn btn-primary" ng-click="puzzle.solve()
     ">Solve</button>
   </div>
+
+  <div class="input-div">
+    <label>Rows</label>
+    <input type="text" ng-model="rows" />
+    &nbsp;&nbsp;&nbsp;
+    <label>Cols</label>
+    <input type="text" ng-model="cols" />
+  </div>
+
   <table class="sliding-puzzle-table" ng-class="{'puzzle-solved': puzzle.isSolved()}">
     <tr ng-repeat="($row, row) in puzzle.grid">
       <td ng-repeat="($col, tile) in row"         

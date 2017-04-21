@@ -17,6 +17,15 @@
   border: none;
 }
 
-.control-div {
+.control-div, .input-div {
   padding: 15px;
 }
+
+.input-div input {
+  width: 60px;
+}
+
+.input-div label{
+  width: 40px;
+}
+

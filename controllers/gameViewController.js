@@ -130,7 +130,9 @@
       link: function(scope, element, attrs) {
 
         var image = new Image();
-        var rows = 3, cols = 3;
+        var rows = 3, cols = 3;        
+
+        scope.rows = 3, scope.cols = 3;
 
         scope.create = function() {
           scope.puzzle = new slidingPuzzle(rows, cols);                    
@@ -169,7 +171,9 @@
           };
         });
 
-        scope.onClickRestart = function() {          
+        scope.onClickRestart = function() {
+          rows = scope.rows;
+          cols = scope.cols;     
           scope.create();
           scope.tile();          
         };
